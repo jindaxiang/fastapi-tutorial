@@ -76,4 +76,4 @@ app.include_router(app08, prefix='/chapter08', tags=['第八章 中间件、CORS
 app.include_router(application, prefix='/coronavirus', tags=['新冠病毒疫情跟踪器API'])
 
 if __name__ == '__main__':
-    uvicorn.run('run:app', host='0.0.0.0', port=8000, reload=True, debug=True, workers=1)
+    uvicorn.run('run:app', host='127.0.0.1', port=8000, reload=True, debug=True, workers=1)
