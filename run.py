@@ -75,7 +75,7 @@ app.include_router(app05, prefix="/chapter05", tags=["第五章 FastAPI的依赖
 app.include_router(app06, prefix="/chapter06", tags=["第六章 安全、认证和授权"])
 app.include_router(app07, prefix="/chapter07", tags=["第七章 FastAPI的数据库操作和多应用的目录结构设计"])
 app.include_router(app08, prefix="/chapter08", tags=["第八章 中间件、CORS、后台任务、测试用例"])
-app.include_router(application, prefix="/coronavirus", tags=["新冠病毒疫情跟踪器API"])
+app.include_router(application, prefix="/covid", tags=["新冠病毒疫情跟踪器API"])
 
 if __name__ == "__main__":
     uvicorn.run(
