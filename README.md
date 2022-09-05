@@ -1,11 +1,14 @@
 ## FastAPI 框架精讲
+
 > 整体的介绍 FastAPI，快速上手开发，结合 API 交互文档逐个讲解核心模块的使用
 
 ![drf-tutorial](./coronavirus/static/fastapi-tutorial.png)
 
-体验新一代高性能 Python Web 框架，本课程将从 Hello World 开始引导同学们学习 FastAPI 框架的所有知识点。从框架特性一览，到 ASGI 服务介绍，第三章开始会以全球  COVID-19 感染数据查询为功能场景，依次讲解 FastAPI 的 API 交互文档使用，如何使用 Pydantic 定义和规范数据格式、类型，各种请求参数和验证，Jinja2 模板渲染和 Static 静态文件配置，FastAPI 的响应处理和配置，通过代码示例讲解依赖注入系统的所有知识，数据库配置与 SQLAlchemy 的使用，大型工程应该如何设计目录结构。框架的安全、认证、授权，中间件开发，跨域资源共享的实现，后台任务和测试用例的编写。
-
-
+体验新一代高性能 Python Web 框架，本课程将从 Hello World 开始引导同学们学习 FastAPI 框架的所有知识点。从框架特性一览，到
+ASGI 服务介绍，第三章开始会以全球 COVID-19 感染数据查询为功能场景，依次讲解 FastAPI 的 API 交互文档使用，如何使用 Pydantic
+定义和规范数据格式、类型，各种请求参数和验证，Jinja2 模板渲染和 Static 静态文件配置，FastAPI
+的响应处理和配置，通过代码示例讲解依赖注入系统的所有知识，数据库配置与 SQLAlchemy
+的使用，大型工程应该如何设计目录结构。框架的安全、认证、授权，中间件开发，跨域资源共享的实现，后台任务和测试用例的编写。
 
 ### 课程12个核心技术点
 
@@ -20,46 +23,39 @@
 9. 大型工程应该如何目录结构设计，多应用的文件拆分
 10. FastAPI 的中间件开发
 11. FastAPI 中跨域资源共享 CORS 的原理和实现方式
-12. 如何编写后台任何和测试用例"		
-
-
+12. 如何编写后台任何和测试用例"
 
 ### 适合人群
 
 任何想学习Python开发的同学，尤其是需要高效率完成高并发、高性能项目的同学。
 
-
-
 ### 课程效果展示
 
-1.  简易版前端效果
-![drf-tutorial](./coronavirus/static/preview01.png)
-2.  API交互文档 - **Swagger UI**
-![drf-tutorial](./coronavirus/static/preview02.png)
-3.  第三章的接口
-![drf-tutorial](./coronavirus/static/preview03.png)
-4.  第四、五章的接口
-![drf-tutorial](./coronavirus/static/preview04.png)
-5.  接口的参数、返回的状态码、描述
-![drf-tutorial](./coronavirus/static/preview05.png)
-6.  接口认证的效果
-![drf-tutorial](./coronavirus/static/preview06.png)
-7.  第七、八章和`Coronavirus`应用的接口
-![drf-tutorial](./coronavirus/static/preview07.png)
-8.  城市信息表
-![drf-tutorial](./coronavirus/static/preview08.png)
-9.  感染数据表
-![drf-tutorial](./coronavirus/static/preview09.png)
-
-
+1. 简易版前端效果
+   ![drf-tutorial](./coronavirus/static/preview01.png)
+2. API交互文档 - **Swagger UI**
+   ![drf-tutorial](./coronavirus/static/preview02.png)
+3. 第三章的接口
+   ![drf-tutorial](./coronavirus/static/preview03.png)
+4. 第四、五章的接口
+   ![drf-tutorial](./coronavirus/static/preview04.png)
+5. 接口的参数、返回的状态码、描述
+   ![drf-tutorial](./coronavirus/static/preview05.png)
+6. 接口认证的效果
+   ![drf-tutorial](./coronavirus/static/preview06.png)
+7. 第七、八章和`Coronavirus`应用的接口
+   ![drf-tutorial](./coronavirus/static/preview07.png)
+8. 城市信息表
+   ![drf-tutorial](./coronavirus/static/preview08.png)
+9. 感染数据表
+   ![drf-tutorial](./coronavirus/static/preview09.png)
 
 ### 第一章 课程介绍
 
 #### 1.1 课程内容与导学
 
-介绍本课程的学习内容和目标，如何学习本课程，展示最终代码和效果，引导同学们对  FastAPI 框架有一个基本的了解，并能够在课程结束后独立使用 FastAPI 完成 RESTful API 接口开发。
-
-
+介绍本课程的学习内容和目标，如何学习本课程，展示最终代码和效果，引导同学们对 FastAPI 框架有一个基本的了解，并能够在课程结束后独立使用
+FastAPI 完成 RESTful API 接口开发。
 
 ### 第二章 FastAPI介绍和项目准备
 
@@ -75,11 +71,14 @@
 
 #### 2.3 Django vs Flask vs FastAPI 三框架大拼比
 
-从开发效率、性能测评、框架生态、社区支持、学习难易程度多个角度对比 Django/Flask/FastAPI。性能评测参考 [https://www.techempower.com/benchmarks](https://www.techempower.com/benchmarks) 的Web Framework Benchmarks
+从开发效率、性能测评、框架生态、社区支持、学习难易程度多个角度对比
+Django/Flask/FastAPI。性能评测参考 [https://www.techempower.com/benchmarks](https://www.techempower.com/benchmarks) 的Web
+Framework Benchmarks
 
 #### 2.4 Starlette，Pydantic 与 FastAPI 框架是什么关系？
 
-介绍  Starlette 是个什么项目；IDE 开发时 Python 3.5+ 版本的 "type hints" 的好处：简短、直观和标准的 Python 类型声明；介绍 Pydantic 包，FastAPI  项目的开发为什么要使用 Pydantic
+介绍 Starlette 是个什么项目；IDE 开发时 Python 3.5+ 版本的 "type hints" 的好处：简短、直观和标准的 Python 类型声明；介绍
+Pydantic 包，FastAPI 项目的开发为什么要使用 Pydantic
 
 #### 2.5 ASGI 服务 Uvicorn 和 Hypercorn 介绍
 
@@ -87,7 +86,7 @@
 
 #### 2.6 搭建 FastAPI 项目开发环境
 
-使用 Virtualenv 搭建 FastAPI  项目开发环境，安装 FastAPI，Pydantic，Uvicorn 等
+使用 Virtualenv 搭建 FastAPI 项目开发环境，安装 FastAPI，Pydantic，Uvicorn 等
 
 #### 2.7 经验分享-Python 项目开发中包的版本问题
 
@@ -101,8 +100,6 @@
 
 总结本章的知识点，回顾重难点，下章内容预告
 
-
-
 ### 第三章 请求参数和验证
 
 ![drf-tutorial](./coronavirus/static/chapter03.png)
@@ -113,7 +110,9 @@
 
 #### 3.2 "hello world" 接口给后端传 COVID-19 感染数据
 
-首先运行一个简单的 FastAPI 程序，实现返回 "hello world" 的接口；进一步，继承 Pydantic 的 BaseModel 规范请求体数据格式和类型，通过查询参数和请求体传递城市、所在国家、是否有感染病例的信息，讲解 FastAPI 框架的基本开发方法，同步和异步函数的编写、装饰器、URL 路由、HTTP 方法
+首先运行一个简单的 FastAPI 程序，实现返回 "hello world" 的接口；进一步，继承 Pydantic 的 BaseModel
+规范请求体数据格式和类型，通过查询参数和请求体传递城市、所在国家、是否有感染病例的信息，讲解 FastAPI
+框架的基本开发方法，同步和异步函数的编写、装饰器、URL 路由、HTTP 方法
 
 #### 3.3 FastAPI 的 API 交互文档 - Swagger UI 和 ReDoc
 
@@ -125,7 +124,8 @@
 
 #### 3.5 查询参数和数据的解析、验证
 
-讲解查询参数的传参方式，类型转换，多路径参数和查询参数的使用，必填查询参数；模拟一个能选择数据源，查询今日全球 COVID-19 感染数据的接口
+讲解查询参数的传参方式，类型转换，多路径参数和查询参数的使用，必填查询参数；模拟一个能选择数据源，查询今日全球 COVID-19
+感染数据的接口
 
 #### 3.6 请求体以及混合参数
 
@@ -133,17 +133,16 @@
 
 #### 3.7 如何定义数据格式嵌套的请求体？
 
-通过 Python 类的继承，结合 typing 和  Pydantic 的 Field 类，用嵌套的模型类定义数据格式嵌套的请求体
+通过 Python 类的继承，结合 typing 和 Pydantic 的 Field 类，用嵌套的模型类定义数据格式嵌套的请求体
 
 #### 3.8 如何设置 Cookie 和 Header 参数？
 
-用 FastAPI 的 Cookie 类实现在后端定义 Cookie 的参数，用 Header 类实现在后端定义请求头的参数，请求头参数自动转换功能介绍，请求头参数中重复的 key 如何处理
+用 FastAPI 的 Cookie 类实现在后端定义 Cookie 的参数，用 Header 类实现在后端定义请求头的参数，请求头参数自动转换功能介绍，请求头参数中重复的
+key 如何处理
 
 #### 3.9 本章小结&下章内容预告
 
 总结本章的知识点，回顾重难点，下章内容预告
-
-
 
 ### 第四章 响应处理和FastAPI配置
 
@@ -155,7 +154,8 @@
 
 #### 4.2 响应模型示例精讲
 
-响应模型的声明和调用，response_model 指定默认值或响应模型，response_model_exclude_unset、response_model_include和response_model_exclude 参数含义
+响应模型的声明和调用，response_model
+指定默认值或响应模型，response_model_exclude_unset、response_model_include和response_model_exclude 参数含义
 
 #### 4.3 响应状态码和快捷属性
 
@@ -175,7 +175,8 @@ CSS/JS/IMAGES 静态文件的配置，项目如何找到 Static 文件夹
 
 #### 4.7 路径操作配置(Path Operation Configuration)
 
-Path Operation Configuration的概念，包括 Response Status Code、Tags、Summary and description、文档描述符、响应描述、Deprecate 参数
+Path Operation Configuration的概念，包括 Response Status Code、Tags、Summary and description、文档描述符、响应描述、Deprecate
+参数
 
 #### 4.8 FastAPI 应用的常见配置项
 
@@ -188,8 +189,6 @@ HTTPException 的使用，如何自定义异常处理器；给第六小节开发
 #### 4.10 本章小结&下章内容预告
 
 总结本章的知识点，回顾重难点，下章内容预告
-
-
 
 ### 第五章 FastAPI的依赖注入系统
 
@@ -231,8 +230,6 @@ yield 在依赖函数中的作用，讲解数据库连接的案例
 
 总结本章的知识点，回顾重难点，下章内容预告
 
-
-
 ### 第六章 安全、认证和授权
 
 ![drf-tutorial](./coronavirus/static/chapter06.png)
@@ -247,7 +244,8 @@ yield 在依赖函数中的作用，讲解数据库连接的案例
 
 #### 6.3 OAuth2 密码模式和 FastAPI 的 OAuth2PasswordBearer
 
-OAuth2 密码模式的认证过程， 继承OAuth2PasswordBearer类，使用 OAuth2 的密码模式，在请求头中携带 Authorization: Bearer your_token 实现认证
+OAuth2 密码模式的认证过程， 继承OAuth2PasswordBearer类，使用 OAuth2 的密码模式，在请求头中携带 Authorization: Bearer
+your_token 实现认证
 
 #### 6.4 基于 Password 和 Bearer token 的 OAuth2 认证
 
@@ -260,8 +258,6 @@ JSON Web Tokens介绍，安装 python-jose 和 passlib，实现 JWT 认证，用
 #### 6.6 本章小结&下章内容预告
 
 总结本章的知识点，回顾重难点，下章内容预告
-
-
 
 ### 第七章 FastAPI的数据库操作和多应用的目录结构设计
 
@@ -303,8 +299,6 @@ FastAPI 项目中 Jinja2 配置，使用 Jinja2 渲染 COVID-19 查询页面，�
 
 总结本章的知识点，回顾重难点，下章内容预告
 
-
-
 ### 第八章 中间件、CORS、后台任务、测试用例
 
 ![drf-tutorial](./coronavirus/static/chapter08.png)
@@ -315,7 +309,8 @@ FastAPI 项目中 Jinja2 配置，使用 Jinja2 渲染 COVID-19 查询页面，�
 
 #### 8.2 中间件的概念和开发示例
 
-中间件的概念，对 request 和 response 的处理流程，需要中间件开发的场景；使用 app.middleware("http") 装饰器创建一个中间件，在响应头中加上对每个 request 处理时间的键值对，演示response前后的处理
+中间件的概念，对 request 和 response 的处理流程，需要中间件开发的场景；使用 app.middleware("http") 装饰器创建一个中间件，在响应头中加上对每个
+request 处理时间的键值对，演示response前后的处理
 
 #### 8.3 跨域资源共享 CORS 的原理
 
@@ -331,7 +326,9 @@ FastAPI 项目中 Jinja2 配置，使用 Jinja2 渲染 COVID-19 查询页面，�
 
 #### 8.6 后台任务更新 COVID-19 数据
 
-先说下 COVID-19 全球数据源的问题，对接 [https://coronavirus-tracker-api.herokuapp.com](https://coronavirus-tracker-api.herokuapp.com) 的数据源，后台任务的方式将数据更新到数据表，前端只需要一个点击按钮
+先说下 COVID-19
+全球数据源的问题，对接 [https://coronavirus-tracker-api.herokuapp.com](https://coronavirus-tracker-api.herokuapp.com)
+的数据源，后台任务的方式将数据更新到数据表，前端只需要一个点击按钮
 
 #### 8.7 TestClient 编写测试用例
 
@@ -340,8 +337,6 @@ FastAPI 项目中 Jinja2 配置，使用 Jinja2 渲染 COVID-19 查询页面，�
 #### 8.8 本章小结
 
 总结本章的知识点，回顾重难点
-
-
 
 ### 第九章 课程总结
 
