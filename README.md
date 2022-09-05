@@ -2,7 +2,7 @@
 
 > 整体的介绍 FastAPI，快速上手开发，结合 API 交互文档逐个讲解核心模块的使用
 
-![drf-tutorial](./coronavirus/static/fastapi-tutorial.png)
+![fastapi-tutorial](./coronavirus/static/fastapi-tutorial.png)
 
 体验新一代高性能 Python Web 框架，本课程将从 Hello World 开始引导同学们学习 FastAPI 框架的所有知识点。从框架特性一览，到
 ASGI 服务介绍，第三章开始会以全球 COVID-19 感染数据查询为功能场景，依次讲解 FastAPI 的 API 交互文档使用，如何使用 Pydantic
@@ -32,23 +32,23 @@ ASGI 服务介绍，第三章开始会以全球 COVID-19 感染数据查询为�
 ### 课程效果展示
 
 1. 简易版前端效果
-   ![drf-tutorial](./coronavirus/static/preview01.png)
+   ![fastapi-tutorial](./coronavirus/static/preview01.png)
 2. API交互文档 - **Swagger UI**
-   ![drf-tutorial](./coronavirus/static/preview02.png)
+   ![fastapi-tutorial](./coronavirus/static/preview02.png)
 3. 第三章的接口
-   ![drf-tutorial](./coronavirus/static/preview03.png)
+   ![fastapi-tutorial](./coronavirus/static/preview03.png)
 4. 第四、五章的接口
-   ![drf-tutorial](./coronavirus/static/preview04.png)
+   ![fastapi-tutorial](./coronavirus/static/preview04.png)
 5. 接口的参数、返回的状态码、描述
-   ![drf-tutorial](./coronavirus/static/preview05.png)
+   ![fastapi-tutorial](./coronavirus/static/preview05.png)
 6. 接口认证的效果
-   ![drf-tutorial](./coronavirus/static/preview06.png)
+   ![fastapi-tutorial](./coronavirus/static/preview06.png)
 7. 第七、八章和`Coronavirus`应用的接口
-   ![drf-tutorial](./coronavirus/static/preview07.png)
+   ![fastapi-tutorial](./coronavirus/static/preview07.png)
 8. 城市信息表
-   ![drf-tutorial](./coronavirus/static/preview08.png)
+   ![fastapi-tutorial](./coronavirus/static/preview08.png)
 9. 感染数据表
-   ![drf-tutorial](./coronavirus/static/preview09.png)
+   ![fastapi-tutorial](./coronavirus/static/preview09.png)
 
 ### 第一章 课程介绍
 
