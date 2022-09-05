@@ -54,7 +54,7 @@ ASGI 服务介绍，第三章开始会以全球 COVID-19 感染数据查询为�
 
 #### 1.1 课程内容与导学
 
-介绍本课程的学习内容和目标，如何学习本课程，展示最终代码和效果，引导同学们对 FastAPI 框架有一个基本的了解，并能够在课程结束后独立使用
+介绍本课程的学习内容和目标，如何学习本课程，展示最终代码和效果，引导同学们对 FastAPI 框架有一个基本地了解，并能够在课程结束后独立使用
 FastAPI 完成 RESTful API 接口开发。
 
 ### 第二章 FastAPI介绍和项目准备
@@ -67,7 +67,7 @@ FastAPI 完成 RESTful API 接口开发。
 
 #### 2.2 为什么新秀 FastAPI 火成这样 ?
 
-介绍 FastAPI 有哪些突出特点，浏览官网文档中的 Feasures 一览
+介绍 FastAPI 有哪些突出特点，浏览官网文档中的 Features 一览
 
 #### 2.3 Django vs Flask vs FastAPI 三框架大拼比
 
@@ -116,7 +116,7 @@ Pydantic 包，FastAPI 项目的开发为什么要使用 Pydantic
 
 #### 3.3 FastAPI 的 API 交互文档 - Swagger UI 和 ReDoc
 
-接着上一小节开发的接口功能，API 交互文档一览，使用方法介绍；另一个可用的 API 交互文档 ReDoc
+紧接着在上一节课开发的接口功能，API 交互文档一览，使用方法介绍；另一个可用的 API 交互文档 ReDoc
 
 #### 3.4 路径参数和数据的解析、验证
 
@@ -184,7 +184,7 @@ Path Operation Configuration的概念，包括 Response Status Code、Tags、Sum
 
 #### 4.9 FastAPI 框架的错误处理
 
-HTTPException 的使用，如何自定义异常处理器；给第六小节开发的 COVID-19 数据查询接口定义异常处理
+HTTPException 的使用，如何自定义异常处理器；给第六节课开发的 COVID-19 数据查询接口定义异常处理
 
 #### 4.10 本章小结&下章内容预告
 
@@ -277,7 +277,7 @@ SQLAlchemy ORM 介绍，FastAPI 项目中如何配置SQLite数据库，应用的
 
 #### 7.4 使用 Pydantic 建立与模型类对应的数据格式类
 
-对于上一小节开发的城市和感染数据模型类，继承 pydantic.BaseModel 分别开发对应的创建和读取数据的数据格式类
+对于上一节课开发的城市和感染数据模型类，继承 pydantic.BaseModel 分别开发对应的创建和读取数据的数据格式类
 
 #### 7.5 把创建和查询 COVID-19 数据封装成函数
 
@@ -285,7 +285,7 @@ SQLAlchemy ORM 介绍，FastAPI 项目中如何配置SQLite数据库，应用的
 
 #### 7.6 开发 COVID-19 感染数据查询接口
 
-调用上一小节的函数，实现创建城市，查询城市信息和各个城市每日感染病例数据的接口
+调用上一节课的函数，实现创建城市，查询城市信息和各个城市每日感染病例数据的接口
 
 #### 7.7 Jinja2 模板渲染前端页面
 
@@ -332,7 +332,7 @@ request 处理时间的键值对，演示response前后的处理
 
 #### 8.7 TestClient 编写测试用例
 
-用 FastAPI 的 TestClient 编写3个简单的测试用例，测试上一小节的后台任务接口；讲解测试用例的开发思路
+用 FastAPI 的 TestClient 编写3个简单的测试用例，测试上一节课的后台任务接口；讲解测试用例的开发思路
 
 #### 8.8 本章小结
 
