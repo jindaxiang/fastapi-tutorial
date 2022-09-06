@@ -1,5 +1,12 @@
 ## FastAPI 框架精讲
 
+### Alembic
+
+```shell
+alembic revision --autogenerate -m "init"
+alembic upgrade head
+```
+
 > 整体的介绍 FastAPI，快速上手开发，结合 API 交互文档逐个讲解核心模块的使用
 
 ![fastapi-tutorial](./coronavirus/static/fastapi-tutorial.png)
@@ -59,7 +66,7 @@ FastAPI 完成 RESTful API 接口开发。
 
 ### 第二章 FastAPI介绍和项目准备
 
-![drf-tutorial](./coronavirus/static/chapter02.png)
+![fastapi-tutorial](./coronavirus/static/chapter02.png)
 
 #### 2.1 本章导学
 
@@ -102,7 +109,7 @@ Pydantic 包，FastAPI 项目的开发为什么要使用 Pydantic
 
 ### 第三章 请求参数和验证
 
-![drf-tutorial](./coronavirus/static/chapter03.png)
+![fastapi-tutorial](./coronavirus/static/chapter03.png)
 
 #### 3.1 本章导学
 
@@ -146,7 +153,7 @@ key 如何处理
 
 ### 第四章 响应处理和FastAPI配置
 
-![drf-tutorial](./coronavirus/static/chapter04.png)
+![fastapi-tutorial](./coronavirus/static/chapter04.png)
 
 #### 4.1 本章导学
 
@@ -192,7 +199,7 @@ HTTPException 的使用，如何自定义异常处理器；给第六节课开发
 
 ### 第五章 FastAPI的依赖注入系统
 
-![drf-tutorial](./coronavirus/static/chapter05.png)
+![fastapi-tutorial](./coronavirus/static/chapter05.png)
 
 #### 5.1 本章导学
 
@@ -232,7 +239,7 @@ yield 在依赖函数中的作用，讲解数据库连接的案例
 
 ### 第六章 安全、认证和授权
 
-![drf-tutorial](./coronavirus/static/chapter06.png)
+![fastapi-tutorial](./coronavirus/static/chapter06.png)
 
 #### 6.1 本章导学
 
@@ -261,7 +268,7 @@ JSON Web Tokens介绍，安装 python-jose 和 passlib，实现 JWT 认证，用
 
 ### 第七章 FastAPI的数据库操作和多应用的目录结构设计
 
-![drf-tutorial](./coronavirus/static/chapter07.png)
+![fastapi-tutorial](./coronavirus/static/chapter07.png)
 
 #### 7.1 本章导学
 
@@ -301,7 +308,7 @@ FastAPI 项目中 Jinja2 配置，使用 Jinja2 渲染 COVID-19 查询页面，�
 
 ### 第八章 中间件、CORS、后台任务、测试用例
 
-![drf-tutorial](./coronavirus/static/chapter08.png)
+![fastapi-tutorial](./coronavirus/static/chapter08.png)
 
 #### 8.1 本章导学
 
@@ -332,7 +339,10 @@ request 处理时间的键值对，演示response前后的处理
 
 #### 8.7 TestClient 编写测试用例
 
-用 FastAPI 的 TestClient 编写3个简单的测试用例，测试上一节课的后台任务接口；讲解测试用例的开发思路
+1. 我们需要了解 `pytest` 来进行测试
+2. 要注意测试的时候的函数的定义需要 `test` 开头
+
+用 FastAPI 的 TestClient 编写 3 个简单的测试用例，测试上一节课的后台任务接口；讲解测试用例的开发思路
 
 #### 8.8 本章小结
 
