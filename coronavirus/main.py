@@ -110,5 +110,5 @@ def coronavirus(request: Request, city: str = None, skip: int = 0, limit: int = 
     return templates.TemplateResponse("home.html", {
         "request": request,
         "data": data,
-        "sync_data_url": "/coronavirus/sync_coronavirus_data/jhu"
+        "sync_data_url": "/covid/sync_coronavirus_data/jhu"
     })

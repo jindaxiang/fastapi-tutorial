@@ -1,5 +1,12 @@
 ## FastAPI 框架精讲
 
+### Alembic
+
+```shell
+alembic revision --autogenerate -m "init"
+alembic upgrade head
+```
+
 > 整体的介绍 FastAPI，快速上手开发，结合 API 交互文档逐个讲解核心模块的使用
 
 ![fastapi-tutorial](./coronavirus/static/fastapi-tutorial.png)
