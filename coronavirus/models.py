@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
-# __author__ = '__Jack__'
+# __author__ = 'Albert'
 # 利用 SQLAlchemy 的定义方式比较好，毕竟比较通用，可以做更多个性化的设置
 
 from sqlalchemy import (
@@ -16,6 +16,28 @@ from sqlalchemy import (
 from sqlalchemy.orm import relationship
 
 from .database import Base
+
+
+class User(Base):
+    __tablename__ = "user"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    username = Column(String(100), unique=True, nullable=False, comment="用户名")
+    password = Column(String(100), nullable=False, comment="密码")
+
+    def __repr__(self):
+        return f"{self.username}-{self.password}"
+
+
+class Book(Base):
+    __tablename__ = "book"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    name = Column(String(100), nullable=False, comment="书名")
+    address = Column(String(100), nullable=False, comment="地址")
+
+    def __repr__(self):
+        return f"{self.name}-{self.address}"
 
 
 class City(Base):
@@ -65,16 +87,3 @@ class Data(Base):
 
     def __repr__(self):
         return f"{repr(self.date)}：确诊{self.confirmed}例"
-
-
-""" 附上三个SQLAlchemy教程
-
-SQLAlchemy的基本操作大全
-    http://www.taodudu.cc/news/show-175725.html
-
-Python3+SQLAlchemy+Sqlite3实现ORM教程
-    https://www.cnblogs.com/jiangxiaobo/p/12350561.html
-
-SQLAlchemy基础知识 Autoflush和Autocommit
-    https://zhuanlan.zhihu.com/p/48994990
-"""
