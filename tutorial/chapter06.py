@@ -168,7 +168,7 @@ def jwt_authenticate_user(db, username: str, password: str):
     if not user:
         return False
     if not verity_password(
-        plain_password=password, hashed_password=user.hashed_password
+            plain_password=password, hashed_password=user.hashed_password
     ):
         return False
     return user
@@ -223,7 +223,7 @@ async def jwt_get_current_user(token: str = Depends(oauth2_schema)):
 
 
 async def jwt_get_current_active_user(
-    current_user: User = Depends(jwt_get_current_user),
+        current_user: User = Depends(jwt_get_current_user),
 ):
     if current_user.disabled:
         raise HTTPException(

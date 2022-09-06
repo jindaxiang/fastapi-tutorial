@@ -15,7 +15,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from coronavirus.database import Base
 
 
 class User(Base):
@@ -24,6 +24,8 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     username = Column(String(100), unique=True, nullable=False, comment="用户名")
     password = Column(String(100), nullable=False, comment="密码")
+    created_at = Column(DateTime, server_default=func.now(), comment="创建时间")
+    book_item = relationship("Book", back_populates="user")
 
     def __repr__(self):
         return f"{self.username}-{self.password}"
@@ -35,6 +37,7 @@ class Book(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String(100), nullable=False, comment="书名")
     address = Column(String(100), nullable=False, comment="地址")
+    book_user = relationship("User", back_populates="book")
 
     def __repr__(self):
         return f"{self.name}-{self.address}"
