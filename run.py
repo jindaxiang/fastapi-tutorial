@@ -30,26 +30,6 @@ app.mount(
 )  # .mount()不要在分路由APIRouter().mount()调用，模板会报错
 
 
-# @app.exception_handler(StarletteHTTPException)  # 重写HTTPException异常处理器
-# async def http_exception_handler(request, exc):
-#     """
-#     :param request: 这个参数不能省
-#     :param exc:
-#     :return:
-#     """
-#     return PlainTextResponse(str(exc.detail), status_code=exc.status_code)
-#
-#
-# @app.exception_handler(RequestValidationError)  # 重写请求验证异常处理器
-# async def validation_exception_handler(request, exc):
-#     """
-#     :param request: 这个参数不能省
-#     :param exc:
-#     :return:
-#     """
-#     return PlainTextResponse(str(exc), status_code=400)
-
-
 @app.middleware("http")
 async def add_process_time_header(
     request: Request, call_next

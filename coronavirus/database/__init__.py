@@ -1,1 +1,1 @@
-from .connection import Base, engine, SessionLocal
+from .connection import engine, SessionLocal

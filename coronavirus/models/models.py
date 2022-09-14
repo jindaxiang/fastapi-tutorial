@@ -14,8 +14,11 @@ from sqlalchemy import (
     func,
 )
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
+from coronavirus.database import engine
 
-from coronavirus.database import Base
+Base = declarative_base()
+Base.metadata.create_all(bind=engine)
 
 
 class User(Base):
@@ -25,7 +28,7 @@ class User(Base):
     username = Column(String(100), unique=True, nullable=False, comment="用户名")
     password = Column(String(100), nullable=False, comment="密码")
     created_at = Column(DateTime, server_default=func.now(), comment="创建时间")
-    book_item = relationship("Book", back_populates="user")
+    book_item = relationship("Book", back_populates="book_user")
 
     def __repr__(self):
         return f"{self.username}-{self.password}"
@@ -37,7 +40,8 @@ class Book(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String(100), nullable=False, comment="书名")
     address = Column(String(100), nullable=False, comment="地址")
-    book_user = relationship("User", back_populates="book")
+    book_user = relationship("User", back_populates="book_item")
+    user_id = Column(Integer, ForeignKey("user.id"))
 
     def __repr__(self):
         return f"{self.name}-{self.address}"
@@ -52,15 +56,14 @@ class City(Base):
     country_code = Column(String(100), nullable=False, comment="国家代码")
     country_population = Column(BigInteger, nullable=False, comment="国家人口")
     data = relationship(
-        "Data", back_populates="city"
+        "Data",
+        back_populates="city",
     )  # 'Data'是关联的类名；back_populates来指定反向访问的属性名称
 
     created_at = Column(DateTime, server_default=func.now(), comment="创建时间")
     updated_at = Column(
         DateTime, server_default=func.now(), onupdate=func.now(), comment="更新时间"
     )
-
-    __mapper_args__ = {"order_by": country_code}  # 默认是正序，倒序加上.desc()方法
 
     def __repr__(self):
         return f"{self.country}_{self.province}"
@@ -85,8 +88,6 @@ class Data(Base):
     updated_at = Column(
         DateTime, server_default=func.now(), onupdate=func.now(), comment="更新时间"
     )
-
-    __mapper_args__ = {"order_by": date.desc()}  # 按日期降序排列
 
     def __repr__(self):
         return f"{repr(self.date)}：确诊{self.confirmed}例"

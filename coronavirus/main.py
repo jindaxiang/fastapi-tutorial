@@ -11,14 +11,13 @@ from pydantic import HttpUrl
 from sqlalchemy.orm import Session
 
 from coronavirus import crud, schemas
-from coronavirus.database import engine, Base, SessionLocal
+from coronavirus.database import SessionLocal
 from coronavirus.models import City, Data
 
 application = APIRouter()
 
 templates = Jinja2Templates(directory='./coronavirus/templates')
 
-Base.metadata.create_all(bind=engine)
 
 
 def get_db():
