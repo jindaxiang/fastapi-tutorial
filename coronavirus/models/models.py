@@ -65,5 +65,3 @@ class Data(Base):
     def __repr__(self):
         return f"{repr(self.date)}：确诊{self.confirmed}例"
 
-
-Base.metadata.create_all(bind=engine)
