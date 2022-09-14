@@ -1,5 +1,14 @@
 ## FastAPI 框架精讲
 
+### Celery
+
+```
+https://www.cnblogs.com/pyedu/p/12461819.html
+https://www.bilibili.com/video/BV1tq4y187k5?p=6&spm_id_from=pageDriver&vd_source=e73742d9cc8d5986eae85db940ef9009
+
+主要看目录结构和使用
+```
+
 ### Alembic
 
 ```shell
