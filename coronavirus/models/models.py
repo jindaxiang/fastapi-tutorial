@@ -13,38 +13,10 @@ from sqlalchemy import (
     ForeignKey,
     func,
 )
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, declarative_base
 from coronavirus.database import engine
 
 Base = declarative_base()
-Base.metadata.create_all(bind=engine)
-
-
-class User(Base):
-    __tablename__ = "user"
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    username = Column(String(100), unique=True, nullable=False, comment="用户名")
-    password = Column(String(100), nullable=False, comment="密码")
-    created_at = Column(DateTime, server_default=func.now(), comment="创建时间")
-    book_item = relationship("Book", back_populates="book_user")
-
-    def __repr__(self):
-        return f"{self.username}-{self.password}"
-
-
-class Book(Base):
-    __tablename__ = "book"
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    name = Column(String(100), nullable=False, comment="书名")
-    address = Column(String(100), nullable=False, comment="地址")
-    book_user = relationship("User", back_populates="book_item")
-    user_id = Column(Integer, ForeignKey("user.id"))
-
-    def __repr__(self):
-        return f"{self.name}-{self.address}"
 
 
 class City(Base):
@@ -58,6 +30,7 @@ class City(Base):
     data = relationship(
         "Data",
         back_populates="city",
+        cascade="all, delete-orphan"
     )  # 'Data'是关联的类名；back_populates来指定反向访问的属性名称
 
     created_at = Column(DateTime, server_default=func.now(), comment="创建时间")
@@ -74,7 +47,7 @@ class Data(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     city_id = Column(
-        Integer, ForeignKey("city.id"), comment="所属省/直辖市"
+        Integer, ForeignKey("city.id", ondelete="CASCADE"), comment="所属省/直辖市"
     )  # ForeignKey里的字符串格式不是类名.属性名，而是表名.字段名
     date = Column(Date, nullable=False, comment="数据日期")
     confirmed = Column(BigInteger, default=0, nullable=False, comment="确诊数量")
@@ -91,3 +64,6 @@ class Data(Base):
 
     def __repr__(self):
         return f"{repr(self.date)}：确诊{self.confirmed}例"
+
+
+Base.metadata.create_all(bind=engine)

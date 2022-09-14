@@ -1,1 +1,1 @@
-from .models import Data, City, User, Book
+from .models import Data, City
